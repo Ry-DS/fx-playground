@@ -1,0 +1,10 @@
+100 metres,time
+200 metres,time
+400 metres,time
+110 metres hurdles,time
+4x100 metre relay,time
+Shot Put,length
+Discuss,length
+Long Jump,length
+Triple Jump,length
+High Jump,length
