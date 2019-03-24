@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="fx-car-hire:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/fx_car_hire_jar</output-path>
+    <root id="archive" name="fx-car-hire.jar">
+      <element id="module-output" name="fx-car-hire" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/controlsfx-9.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

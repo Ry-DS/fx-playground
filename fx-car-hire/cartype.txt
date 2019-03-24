@@ -1,0 +1,15 @@
+Small sedan
+Large sedan
+Wagon
+SUV
+Ute
+Sports coupe
+Limousine
+
+1
+1.5
+1.5
+2
+2
+2.5
+3
