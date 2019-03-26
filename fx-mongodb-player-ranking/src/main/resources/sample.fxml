@@ -18,25 +18,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.ryan_s.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.ryan_s.Controller">
    <children>
       <MenuBar prefWidth="185.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#refreshDatabase" text="Refresh from Database" />
-                  <MenuItem mnemonicParsing="false" onAction="#showSearchDialog" text="Search" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#showDatabaseUrlPrompt" text="Edit Database URL" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#showDatabaseStats" text="Database Statistics" />
-                  <MenuItem mnemonicParsing="false" onAction="#showAuthorPrompt" text="Author" />
             </items>
           </Menu>
         </menus>
@@ -116,6 +104,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
                     </rowConstraints>
                      <children>
                         <TextField fx:id="searchNameField" promptText="Search By Name" GridPane.columnSpan="2147483647">
@@ -141,7 +130,16 @@
                               <Insets left="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <CheckBox fx:id="searchSliderCheckbox" mnemonicParsing="false" text="Slider Active" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="searchSliderCheckbox" mnemonicParsing="false" text="Slider Active" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets top="15.0" />
+                           </GridPane.margin></CheckBox>
+                        <Button mnemonicParsing="false" onAction="#onSearch" text="Search" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                        <Button mnemonicParsing="false" onAction="#clearSearchPosition" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </Button>
                      </children>
                   </GridPane>
                </content>

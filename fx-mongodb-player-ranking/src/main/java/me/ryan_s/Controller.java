@@ -50,6 +50,8 @@ public class Controller {
     @FXML
     public void initialize() throws InterruptedException {
         posBox.setItems(FXCollections.observableArrayList(Position.values()));
+        searchPosBox.setItems(FXCollections.observableArrayList(Position.values()));
+
         setupTable();
 
 
@@ -92,80 +94,6 @@ public class Controller {
             event.getRowValue().setResult(event.getNewValue());
             onEdit(old,event.getRowValue());
         });
-        Predicate<Player> predicate=person->{
-            String nameSearch=searchNameField.getText();
-            Position position=searchPosBox.getValue();
-            int result= (int) searchResultSdr.getValue();
-            if(!nameSearch.isEmpty()){
-                String lowerCaseFilter = nameSearch.toLowerCase();
-
-                if (!person.getName().toLowerCase().contains(lowerCaseFilter)) {
-                    return false;
-                }
-            }
-            if(position!=null&&person.getPosition()!=position){
-                return false;
-            }
-            return person.getResult()<=result;
-
-        };
-
-        players.setPredicate(predicate);
-        searchNameField.textProperty().addListener((o,ol,ne)->players.setPredicate(person->{
-            String nameSearch=searchNameField.getText();
-            Position position=searchPosBox.getValue();
-            int result= (int) searchResultSdr.getValue();
-            if(!nameSearch.isEmpty()){
-                String lowerCaseFilter = nameSearch.toLowerCase();
-
-                if (!person.getName().toLowerCase().contains(lowerCaseFilter)) {
-                    return false;
-                }
-            }
-            if(position!=null&&person.getPosition()!=position){
-                return false;
-            }
-            return person.getResult()<=result;
-
-        }));
-
-        searchPosBox.selectionModelProperty().addListener((o,ol,ne)->players.setPredicate(person->{
-            if(!searchSliderCheckbox.isSelected())return true;
-            String nameSearch=searchNameField.getText();
-            Position position=searchPosBox.getValue();
-            int result= (int) searchResultSdr.getValue();
-            if(!nameSearch.isEmpty()){
-                String lowerCaseFilter = nameSearch.toLowerCase();
-
-                if (!person.getName().toLowerCase().contains(lowerCaseFilter)) {
-                    return false;
-                }
-            }
-            if(position!=null&&person.getPosition()!=position){
-                return false;
-            }
-            return person.getResult()<=result;
-
-        }));
-        searchResultSdr.valueProperty().addListener((o,ol,ne)->players.setPredicate(person->{
-
-            String nameSearch=searchNameField.getText();
-            Position position=searchPosBox.getValue();
-            int result= (int) searchResultSdr.getValue();
-            if(!nameSearch.isEmpty()){
-                String lowerCaseFilter = nameSearch.toLowerCase();
-
-                if (!person.getName().toLowerCase().contains(lowerCaseFilter)) {
-                    return false;
-                }
-            }
-            if(position!=null&&person.getPosition()!=position){
-                return false;
-            }
-            if(!searchSliderCheckbox.isSelected())return true;
-            return person.getResult()==result;
-
-        }));
 
 
 
@@ -365,18 +293,19 @@ public class Controller {
 
         }
     }
-    public void showSearchDialog(){
+    public void clearSearchPosition(){
+        searchPosBox.setValue(null);
+    }
+    public void onSearch(){
+        players.setPredicate(p->{
+            boolean useName=searchNameField.getText().isEmpty()||p.getName().contains(searchNameField.getText());
+            boolean useResult=!searchSliderCheckbox.isSelected()||p.getResult()==(int)searchResultSdr.getValue();
+            boolean usePosition=searchPosBox.getValue()==null||p.getPosition()==searchPosBox.getValue();
+            return useName&&usePosition&&useResult;
+        });
+
 
     }
-    public void showDatabaseUrlPrompt(){
 
-    }
-    public void showDatabaseStats(){
-
-    }
-
-    public void showAuthorPrompt(){
-
-    }
 }
 
