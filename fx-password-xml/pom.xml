@@ -34,7 +34,7 @@
         <dependency>
             <groupId>com.fasterxml.woodstox</groupId>
             <artifactId>woodstox-core</artifactId>
-            <version>RELEASE</version>
+            <version>5.2.0</version>
         </dependency>
     </dependencies>
 

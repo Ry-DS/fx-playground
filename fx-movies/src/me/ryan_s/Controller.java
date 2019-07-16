@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Controller {
     //defining elements of GUI
@@ -68,8 +69,6 @@ public class Controller {
             Notifications.create().text("Reading File...").showInformation();
         });
         readFile();
-
-
     }
 
     private void setupTable() {
