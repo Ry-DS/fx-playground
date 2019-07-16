@@ -38,9 +38,9 @@
                         <Insets top="25.0"/>
                     </GridPane.margin>
                 </Label>
-                <TextField promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <PasswordField promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3"
-                               GridPane.valignment="TOP">
+                <TextField fx:id="userField" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3" GridPane.valignment="TOP">
                     <GridPane.margin>
                         <Insets top="5.0"/>
                     </GridPane.margin>
