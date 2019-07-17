@@ -1,12 +1,11 @@
-package me.ryan_s.login;
+package me.ryan_s;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 
@@ -18,18 +17,18 @@ public class LoginController {
     @FXML
     private TextField passwordField;
     public void initialize() {
+        Platform.runLater(() -> {
+            Notifications.create().text("Welcome").showInformation();
+        });
+
         loginBtn.setOnAction(event -> {
             ((Stage) loginBtn.getScene().getWindow()).close();
-            Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("main.fxml"));
+                Main.show(new Stage(), "main", "Student Library Manager", 850, 400);
             } catch (IOException e) {
+
                 e.printStackTrace();
             }
-            Stage primaryStage = new Stage();
-            primaryStage.setTitle("Student Library Manager");
-            primaryStage.setScene(new Scene(root, 600, 400));
-            primaryStage.show();
         });
 
     }

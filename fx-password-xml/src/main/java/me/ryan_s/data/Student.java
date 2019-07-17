@@ -1,4 +1,4 @@
-package me.ryan_s.login;
+package me.ryan_s.data;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
@@ -17,9 +17,9 @@ public class Student {
     @JacksonXmlProperty(localName = "Student_House")
     private String house;
     @JacksonXmlProperty(localName = "Student_ExamStatus")
-    private char examStatus;
+    private ExamResult examStatus;
 
-    public Student(int id, String familyName, String firstName, String house, char examStatus) {
+    public Student(int id, String familyName, String firstName, String house, ExamResult examStatus) {
         this.id = id;
         this.familyName = familyName;
         this.firstName = firstName;
@@ -47,7 +47,7 @@ public class Student {
     }
 
     public char getExamStatus() {
-        return examStatus;
+        return examStatus.getCharacter();
     }
 
     @Override
