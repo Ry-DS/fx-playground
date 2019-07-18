@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import me.ryan_s.data.Student;
 import me.ryan_s.data.Table;
 import me.ryan_s.data.User;
 
@@ -74,13 +75,18 @@ public class Main extends Application {
     }
 
     public static int nextStudentId() {
-        return 0;
+        int highest = 1;
+        for (Student student : DATA.getStudents()) {
+            if (student.getId() > highest)
+                highest = student.getId();
+        }
+        return ++highest;
     }
 
 
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
         show(primaryStage, "login", "Login", 300, 275);
 
     }
