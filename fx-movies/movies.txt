@@ -1,0 +1,24 @@
+The Godfather
+4
+Action
+
+The Good, The Bad and The Ugly
+5
+Action
+
+Police Academy 7
+1
+Comedy
+
+Kramer vs Kramer
+2
+Drama
+
+The Exorcist
+4
+Horror
+
+A Nightmare On Elm Street
+3
+Horror
+

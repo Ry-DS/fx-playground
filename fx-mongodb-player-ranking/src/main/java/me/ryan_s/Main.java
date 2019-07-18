@@ -15,6 +15,7 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();
+        primaryStage.setOnCloseRequest(v->System.exit(0));
 
     }
 
