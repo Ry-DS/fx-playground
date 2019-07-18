@@ -18,4 +18,10 @@ public enum ExamResult {
     public char getCharacter() {
         return character;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(character);
+
+    }
 }

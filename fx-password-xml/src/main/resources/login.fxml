@@ -45,9 +45,9 @@
                         <Insets top="5.0"/>
                     </GridPane.margin>
                 </PasswordField>
-                <Button fx:id="loginBtn" mnemonicParsing="false" styleClass="btn-success" text="Login"
-                        GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"
-                        GridPane.valignment="TOP">
+                <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLogin" onKeyPressed="#onLogin"
+                        styleClass="btn-success" text="Login" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="4" GridPane.valignment="TOP">
                     <GridPane.margin>
                         <Insets/>
                     </GridPane.margin>

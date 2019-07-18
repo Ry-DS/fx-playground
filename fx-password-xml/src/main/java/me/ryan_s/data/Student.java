@@ -8,6 +8,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
  * @author SimplyBallistic
  **/
 public class Student {
+    //things we want to save to XML
     @JacksonXmlProperty(localName = "Student_ID")
     private int id;
     @JacksonXmlProperty(localName = "Student_FamilyName")
@@ -15,11 +16,12 @@ public class Student {
     @JacksonXmlProperty(localName = "Student_FirstName")
     private String firstName;
     @JacksonXmlProperty(localName = "Student_House")
-    private String house;
+    private House house;
     @JacksonXmlProperty(localName = "Student_ExamStatus")
     private ExamResult examStatus;
 
-    public Student(int id, String familyName, String firstName, String house, ExamResult examStatus) {
+
+    public Student(int id, String familyName, String firstName, House house, ExamResult examStatus) {
         this.id = id;
         this.familyName = familyName;
         this.firstName = firstName;
@@ -34,30 +36,40 @@ public class Student {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getFamilyName() {
         return familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public String getHouse() {
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public House getHouse() {
         return house;
     }
 
-    public char getExamStatus() {
-        return examStatus.getCharacter();
+    public void setHouse(House house) {
+        this.house = house;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", familyName='" + familyName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", house='" + house + '\'' +
-                ", examStatus=" + examStatus +
-                '}';
+    public ExamResult getExamStatus() {
+        return examStatus;
+    }
+
+    public void setExamStatus(ExamResult examStatus) {
+        this.examStatus = examStatus;
     }
 }
+

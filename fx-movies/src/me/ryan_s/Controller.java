@@ -56,7 +56,7 @@ public class Controller {
     private File file = new File(System.getProperty("user.dir") + "/movies.txt");
 
     @FXML//run when application starts
-    public void initialize() throws InterruptedException {
+    public void initialize() {
         //initialise the genre choice boxes with the set genres
         genreBox.setItems(FXCollections.observableArrayList(Genre.values()));
         searchGenreBox.setItems(FXCollections.observableArrayList(Genre.values()));

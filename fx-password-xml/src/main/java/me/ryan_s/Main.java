@@ -24,14 +24,23 @@ public class Main extends Application {
         XML_MAPPER.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        try {
+            loadFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        launch(args);
 
+    }
+
+    public static void loadFile() throws IOException {
         if (!DATA_FILE.createNewFile()) {//file exists
             try {
                 DATA = XML_MAPPER.readValue(DATA_FILE, Table.class);
                 System.out.println(DATA);
                 System.out.println("Loaded XML");
-                launch(args);
                 return;
 
             } catch (JsonProcessingException e) {
@@ -43,25 +52,32 @@ public class Main extends Application {
         //otherwise, create new one.
         DATA = new Table(new User("admin", "admin"));
         saveXml();
-        launch(args);
-
     }
 
     public static void saveXml() throws IOException {
         XML_MAPPER.writeValue(DATA_FILE, DATA);
     }
 
-    public static void show(Stage primaryStage, String fileName, String title, int width, int height) throws IOException {
+    public static void show(Stage primaryStage, String fileName, String title, int width, int height) {
+        try {
+            Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource(fileName + ".fxml"));
+            primaryStage.setTitle(title);
 
-        Parent root = FXMLLoader.load(Main.class.getClassLoader().getResource(fileName + ".fxml"));
-        primaryStage.setTitle(title);
+            Scene scene;
+            primaryStage.setScene(scene = new Scene(root, width, height));
+            scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
 
-        Scene scene;
-        primaryStage.setScene(scene = new Scene(root, width, height));
-        scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
-
-        primaryStage.show();
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+    public static int nextStudentId() {
+        return 0;
+    }
+
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {

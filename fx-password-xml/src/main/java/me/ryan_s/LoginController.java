@@ -5,9 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import me.ryan_s.data.User;
 import org.controlsfx.control.Notifications;
-
-import java.io.IOException;
 
 public class LoginController {
     @FXML
@@ -21,15 +20,22 @@ public class LoginController {
             Notifications.create().text("Welcome").showInformation();
         });
 
-        loginBtn.setOnAction(event -> {
+
+    }
+
+    public void onLogin() {
+        User user = new User(userField.getText(), passwordField.getText());
+        if (!Main.DATA.getUsers().contains(user)) {
+            Platform.runLater(() -> {
+                Notifications.create().text("Incorrect Username or Password").showError();
+            });
+
+
+        } else {
+
+
+            Main.show(new Stage(), "main", "Student Library Manager", 850, 400);
             ((Stage) loginBtn.getScene().getWindow()).close();
-            try {
-                Main.show(new Stage(), "main", "Student Library Manager", 850, 400);
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-        });
-
+        }
     }
 }
