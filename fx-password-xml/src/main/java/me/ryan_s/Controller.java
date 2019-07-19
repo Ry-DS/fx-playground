@@ -154,7 +154,7 @@ public class Controller {//represents the main window
             return;
         }
         //otherwise, construct a member with inputted values
-        Member member = new Member(Main.nextMemberId(), familyNameField.getText(), nameField.getText(), gradeBox.getValue(), financialBox.getValue());
+        Member member = new Member(Main.nextMemberId(), nameField.getText(), familyNameField.getText(), gradeBox.getValue(), financialBox.getValue());
         Main.DATA.addMember(member);//add member to the main list
         try {
             Main.saveXml();//try save file

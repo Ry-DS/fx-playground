@@ -139,3 +139,5 @@ fx-library/\.idea/
 fx-movies/\.idea/
 
 fx-password-xml/\.idea/
+
+*.class
