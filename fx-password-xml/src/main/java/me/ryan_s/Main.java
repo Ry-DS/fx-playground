@@ -75,7 +75,7 @@ public class Main extends Application {
     }
 
     public static int nextStudentId() {
-        int highest = 1;
+        int highest = 0;
         for (Student student : DATA.getStudents()) {
             if (student.getId() > highest)
                 highest = student.getId();
