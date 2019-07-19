@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Table>
+    <Members>
+        <Member_ID>1</Member_ID>
+        <Member_FamilyName>Nurk</Member_FamilyName>
+        <Member_FirstName>Fred</Member_FirstName>
+        <Member_Grade>A</Member_Grade>
+        <Member_FinancialStatus>F</Member_FinancialStatus>
+    </Members>
+    <Members>
+        <Member_ID>2</Member_ID>
+        <Member_FamilyName>Clarke</Member_FamilyName>
+        <Member_FirstName>John</Member_FirstName>
+        <Member_Grade>B</Member_Grade>
+        <Member_FinancialStatus>P</Member_FinancialStatus>
+    </Members>
+    <Members>
+        <Member_ID>3</Member_ID>
+        <Member_FamilyName>Milligan</Member_FamilyName>
+        <Member_FirstName>Spike</Member_FirstName>
+        <Member_Grade>C</Member_Grade>
+        <Member_FinancialStatus>U</Member_FinancialStatus>
+    </Members>
+</Table>
