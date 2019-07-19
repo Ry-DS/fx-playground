@@ -10,6 +10,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -31,7 +33,7 @@
     </MenuBar>
     <GridPane prefWidth="775.0" VBox.vgrow="ALWAYS">
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" percentWidth="40.0" prefWidth="1.0"/>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
       </columnConstraints>
       <rowConstraints>
@@ -44,9 +46,11 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
       </rowConstraints>
       <children>
-        <Label prefWidth="194.0" text="SCHS Library" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+        <Label prefHeight="30.0" prefWidth="424.0" style="-fx-text-fill: red;"
+               text="Farnarkling &amp; Underwater Chess Club" GridPane.columnSpan="2147483647"
+               GridPane.halignment="CENTER">
           <font>
-            <Font name="Copperplate Gothic Bold" size="25.0"/>
+            <Font name="Bodoni MT" size="25.0"/>
           </font>
         </Label>
         <TextField fx:id="familyNameField" promptText="Family Name" GridPane.rowIndex="1">
@@ -59,20 +63,20 @@
             <Insets left="20.0" right="20.0"/>
           </GridPane.margin>
         </TextField>
-        <ComboBox fx:id="houseBox" prefWidth="150.0" promptText="House" styleClass="split-menu-btn-default"
+        <ComboBox fx:id="gradeBox" prefWidth="150.0" promptText="Playing Grade" styleClass="split-menu-btn-default"
                   GridPane.rowIndex="3">
           <GridPane.margin>
             <Insets left="20.0"/>
           </GridPane.margin>
         </ComboBox>
-        <ComboBox fx:id="examBox" prefWidth="150.0" promptText="Exam Status" styleClass="split-menu-btn-default"
-                  GridPane.rowIndex="4">
+        <ComboBox fx:id="financialBox" prefWidth="150.0" promptText="Financial Status"
+                  styleClass="split-menu-btn-default" GridPane.rowIndex="4">
           <GridPane.margin>
             <Insets left="20.0"/>
           </GridPane.margin>
         </ComboBox>
         <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSaveClick" onKeyPressed="#onSaveClick"
-                styleClass="btn-success" text="Save" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                styleClass="btn-primary" text="Save" GridPane.halignment="CENTER" GridPane.rowIndex="5">
           <GridPane.margin>
             <Insets top="20.0"/>
           </GridPane.margin>
@@ -83,8 +87,8 @@
             <TableColumn fx:id="idCol" prefWidth="75.0" text="ID"/>
             <TableColumn fx:id="nameCol" prefWidth="75.0" text="First Name"/>
             <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Last Name"/>
-            <TableColumn fx:id="houseCol" prefWidth="75.0" text="House"/>
-            <TableColumn fx:id="examCol" prefWidth="75.0" text="Exam Status"/>
+            <TableColumn fx:id="gradeCol" prefWidth="75.0" text="Grade"/>
+            <TableColumn fx:id="financialCol" prefWidth="75.0" text="Financial Status"/>
           </columns>
           <GridPane.margin>
             <Insets bottom="20.0" right="20.0"/>
@@ -93,6 +97,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
           </columnResizePolicy>
         </TableView>
+        <ImageView fitHeight="163.0" fitWidth="326.0" pickOnBounds="true" preserveRatio="true"
+                   GridPane.halignment="CENTER" GridPane.rowIndex="6">
+          <image>
+            <Image url="@Farnarkling.jpg"/>
+          </image>
+        </ImageView>
       </children>
     </GridPane>
   </children>

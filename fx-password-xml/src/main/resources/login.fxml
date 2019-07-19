@@ -46,16 +46,16 @@
                     </GridPane.margin>
                 </PasswordField>
                 <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLogin" onKeyPressed="#onLogin"
-                        styleClass="btn-success" text="Login" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        styleClass="btn-info" text="Login" GridPane.columnIndex="1" GridPane.halignment="CENTER"
                         GridPane.rowIndex="4" GridPane.valignment="TOP">
                     <GridPane.margin>
                         <Insets/>
                     </GridPane.margin>
                 </Button>
-                <ImageView fitHeight="68.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true"
+                <ImageView fitHeight="79.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true"
                            GridPane.columnIndex="1" GridPane.halignment="CENTER">
                     <image>
-                        <Image url="@logo.png"/>
+                        <Image url="@Underwater%20Chess.jpg"/>
                     </image>
                     <GridPane.margin>
                         <Insets top="20.0"/>

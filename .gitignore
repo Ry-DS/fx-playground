@@ -131,3 +131,11 @@ hs_err_pid*
 
 *.log
 saves/
+
+*.jar
+
+fx-library/\.idea/
+
+fx-movies/\.idea/
+
+fx-password-xml/\.idea/

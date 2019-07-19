@@ -16,11 +16,11 @@ import java.util.List;
 //states this is the root element, the beginning of our xml document
 @JacksonXmlRootElement
 public class Table {
-    @JacksonXmlElementWrapper(/*useWrapping = false*/localName = "Students")
+    @JacksonXmlElementWrapper(localName = "Members")
 //states this variable isn't wrapped (isn't enclosed within another variable), represents whole collection
-    @JacksonXmlProperty(localName = "Student")
+    @JacksonXmlProperty(localName = "Member")
 //the name each of these elements will hold in the doc, represents single items
-    private List<Student> students = new ArrayList<>();//array holding students in the xml doc
+    private List<Member> members = new ArrayList<>();//array holding members in the xml doc
     @JacksonXmlElementWrapper(localName = "Users")
     @JacksonXmlProperty(localName = "User")
     private List<User> users = new ArrayList<>();
@@ -33,8 +33,9 @@ public class Table {
     public Table() {
     }
 
-    public List<Student> getStudents() {
-        return students == null ? students = new ArrayList<>() : students;
+    //methods to interact with data
+    public List<Member> getMembers() {
+        return members == null ? members = new ArrayList<>() : members;
     }
 
     public List<User> getUsers() {
@@ -45,16 +46,16 @@ public class Table {
         users.add(user);
     }
 
-    public void addStudent(Student student) {
-        students.add(student);
+    public void addMember(Member member) {
+        members.add(member);
     }
 
-    public boolean removeStudent(Student student) {
-        return students.remove(student);
+    public boolean removeMember(Member member) {
+        return members.remove(member);
     }
 
     @Override
     public String toString() {
-        return students + " " + users;
+        return members + " " + users;
     }
 }
